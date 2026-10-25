@@ -129,6 +129,12 @@ test("video keeps player,parent,source and time through route and return", async
   await page.getByRole("button", { name: "Open video route" }).click();
   await expect(page).toHaveURL(/listing\/demo/);
   await expect(page.getByRole("dialog")).toBeVisible();
+  // Visibility starts at the source card. Wait for the expanded player to land
+  // before testing tab order: clipping can hide it during the opening spring.
+  await expect.poll(() => page.getByRole("dialog").evaluate(element =>
+    Math.abs(element.getBoundingClientRect().width - window.innerWidth),
+  )).toBeLessThan(1);
+  await expect(video).toBeVisible();
   expect(
     await video.evaluate((element) => element.closest('[aria-hidden="true"]')),
   ).toBeNull();

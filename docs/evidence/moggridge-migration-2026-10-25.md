@@ -25,3 +25,9 @@ configuration so an enclosing checkout cannot inject application build settings.
 This evidence does not claim native compilation, physical-device execution,
 installed-PWA acceptance, current source-bound release qualification, npm
 publication or production deployment. Source migration preserves existing behavior.
+
+The standalone CSS recheck exposed a race in the browser test: tab navigation
+started while the expanded player was temporarily clipped by the opening spring.
+The test now waits for the fullscreen destination and player visibility before
+checking keyboard reachability, retaining the actual keyboard-focus assertion.
+Five consecutive Chromium repetitions passed after this timing correction.
