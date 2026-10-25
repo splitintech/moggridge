@@ -1,0 +1,614 @@
+.workshop,
+.motion-workshop-portal {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  color: #20382c;
+  background: #f4f2e9;
+  font-synthesis: none;
+}
+.workshop *,
+.motion-workshop-portal * {
+  box-sizing: border-box;
+}
+.workshop button,
+.motion-workshop-portal button,
+.workshop input,
+.motion-workshop-portal input,
+.workshop select,
+.motion-workshop-portal select {
+  font: inherit;
+}
+.workshop button,
+.motion-workshop-portal button {
+  cursor: pointer;
+  border: 1px solid #cbd4c8;
+  background: #fffef8;
+  color: inherit;
+  border-radius: 9px;
+  padding: 11px 15px;
+  min-height: 44px;
+}
+.workshop button:disabled,
+.motion-workshop-portal button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+.workshop button:focus-visible,
+.motion-workshop-portal button:focus-visible,
+.workshop input:focus-visible,
+.motion-workshop-portal input:focus-visible,
+.workshop select:focus-visible,
+.motion-workshop-portal select:focus-visible,
+.workshop summary:focus-visible,
+.motion-workshop-portal summary:focus-visible {
+  outline: 3px solid #d2883b;
+  outline-offset: 3px;
+}
+.workshop {
+  max-width: 1540px;
+  margin: auto;
+  padding: 30px 48px;
+}
+.workshop.large-text {
+  font-size: 1.25rem;
+}
+.workshop header,
+.motion-workshop-portal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #cbd4c8;
+  padding-bottom: 24px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.workshop .brand,
+.motion-workshop-portal .brand {
+  font-size: 28px;
+  color: #20382c;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+.workshop .brand span,
+.motion-workshop-portal .brand span {
+  color: #34765b;
+}
+.workshop .brand i,
+.motion-workshop-portal .brand i {
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: 0.15em;
+  margin-left: 16px;
+}
+.workshop .intro,
+.motion-workshop-portal .intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+  margin: 60px 0;
+}
+.workshop .eyebrow,
+.motion-workshop-portal .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+.workshop h1,
+.motion-workshop-portal h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.97;
+  margin: 22px 0 0;
+}
+.workshop h1 em,
+.motion-workshop-portal h1 em {
+  font-weight: 400;
+  color: #377257;
+}
+.workshop .intro > p,
+.motion-workshop-portal .intro > p {
+  max-width: 360px;
+  line-height: 1.7;
+}
+.workshop .intro small,
+.motion-workshop-portal .intro small {
+  display: block;
+  margin-top: 14px;
+  color: #758174;
+}
+.workshop .workspace,
+.motion-workshop-portal .workspace {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: 40px;
+}
+.workshop aside,
+.motion-workshop-portal aside {
+  align-self: start;
+  position: sticky;
+  top: 24px;
+  border-top: 2px solid #254b38;
+  padding-top: 14px;
+}
+.workshop h2,
+.motion-workshop-portal h2 {
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+.workshop aside label,
+.motion-workshop-portal aside label {
+  display: block;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.workshop aside select,
+.motion-workshop-portal aside select {
+  display: block;
+  width: 100%;
+  border: 1px solid #cbd4c8;
+  background: #fffef8;
+  padding: 9px;
+  margin-top: 7px;
+  border-radius: 7px;
+}
+.workshop aside input[type="range"],
+.motion-workshop-portal aside input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  accent-color: #34765b;
+}
+.workshop output,
+.motion-workshop-portal output {
+  float: right;
+  color: #758174;
+}
+.workshop .check,
+.motion-workshop-portal .check {
+  display: flex !important;
+  gap: 9px;
+  align-items: center;
+}
+.workshop .check input,
+.motion-workshop-portal .check input {
+  accent-color: #34765b;
+  width: 17px;
+  height: 17px;
+}
+.workshop aside > button,
+.motion-workshop-portal aside > button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+}
+.workshop .primary,
+.motion-workshop-portal .primary {
+  background: #24583d;
+  color: white;
+  border-color: #24583d;
+}
+.workshop nav,
+.motion-workshop-portal nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.workshop nav button,
+.motion-workshop-portal nav button {
+  background: transparent;
+  border-color: transparent;
+}
+.workshop nav button[aria-pressed="true"],
+.motion-workshop-portal nav button[aria-pressed="true"] {
+  background: #e1e8d9;
+  border-color: #c7d5bf;
+}
+.workshop .scenes,
+.motion-workshop-portal .scenes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.workshop .scene,
+.motion-workshop-portal .scene {
+  background: #fffef8;
+  border: 1px solid #d9dfd1;
+  border-radius: 14px;
+  padding: 22px;
+  min-width: 0;
+}
+.workshop .scene-heading,
+.motion-workshop-portal .scene-heading {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.workshop .scene-heading > span,
+.motion-workshop-portal .scene-heading > span {
+  color: #8b9686;
+  font-size: 12px;
+}
+.workshop .scene h2,
+.motion-workshop-portal .scene h2 {
+  margin: 0;
+}
+.workshop .scene > p,
+.motion-workshop-portal .scene > p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #74816d;
+  min-height: 42px;
+}
+.workshop .stage,
+.motion-workshop-portal .stage {
+  min-height: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 18px 0;
+}
+.workshop .stage > section,
+.motion-workshop-portal .stage > section,
+.workshop .progress-example,
+.motion-workshop-portal .progress-example {
+  width: 100%;
+}
+.workshop details,
+.motion-workshop-portal details {
+  border-top: 1px solid #e1e5da;
+  padding-top: 12px;
+  font-size: 11px;
+}
+.workshop summary,
+.motion-workshop-portal summary {
+  cursor: pointer;
+  color: #667560;
+  padding: 4px;
+}
+.workshop pre,
+.motion-workshop-portal pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.6;
+  font-size: 11px;
+}
+.workshop .mechanical,
+.motion-workshop-portal .mechanical {
+  box-shadow: 0 4px 0 #335a40;
+  background: #e1eed6;
+}
+.workshop .segmented,
+.motion-workshop-portal .segmented {
+  display: flex;
+  position: relative;
+  gap: 3px;
+  padding: 3px;
+  border-radius: 10px;
+  background: #f0f2e9;
+}
+.workshop .segmented button,
+.motion-workshop-portal .segmented button {
+  position: relative;
+  z-index: 1;
+  background: none;
+  border-color: transparent;
+  padding: 8px;
+  font-size: 12px;
+}
+.workshop .selection-indicator,
+.motion-workshop-portal .selection-indicator {
+  background: #d7e6c9;
+  border-radius: 8px;
+}
+.workshop .home-art,
+.motion-workshop-portal .home-art {
+  height: 180px;
+  background: #c1d1b6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.workshop .home-art:before,
+.motion-workshop-portal .home-art:before {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 180px;
+  border: 22px solid #ffffff60;
+  border-bottom: 0;
+  transform: rotate(-15deg);
+  right: 20px;
+  top: 36px;
+}
+.workshop .home-art strong,
+.motion-workshop-portal .home-art strong {
+  z-index: 1;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  max-width: 180px;
+}
+.workshop .home-1,
+.motion-workshop-portal .home-1 {
+  background: #ddc6a2;
+}
+.workshop .home-2,
+.motion-workshop-portal .home-2 {
+  background: #bdced1;
+}
+.workshop .notice,
+.motion-workshop-portal .notice {
+  background: #e4ecd9;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+}
+.workshop .photo-grid,
+.motion-workshop-portal .photo-grid {
+  gap: 7px;
+  max-height: 340px;
+  width: 100%;
+}
+.workshop .photo-grid button,
+.motion-workshop-portal .photo-grid button {
+  font-size: 10px;
+  min-height: 30px;
+  padding: 4px 6px;
+}
+.workshop .photo,
+.motion-workshop-portal .photo {
+  height: 65px;
+  padding: 12px;
+  background: #dce6d2;
+  margin: 4px 0;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.workshop .photo-1,
+.motion-workshop-portal .photo-1 {
+  background: #e8d6b9;
+}
+.workshop .photo-2,
+.motion-workshop-portal .photo-2 {
+  background: #cedde0;
+}
+.workshop .photo-3,
+.motion-workshop-portal .photo-3 {
+  background: #e3d0c6;
+}
+.workshop .reflow,
+.motion-workshop-portal .reflow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.workshop .favorite,
+.motion-workshop-portal .favorite {
+  font-size: 42px;
+  border: 0;
+  background: transparent;
+}
+.workshop .favorite.selected,
+.motion-workshop-portal .favorite.selected {
+  color: #bf604a;
+}
+.workshop .progress-example > span,
+.motion-workshop-portal .progress-example > span {
+  font-family: Georgia, serif;
+  font-size: 36px;
+}
+.workshop .progress-example [role="progressbar"],
+.motion-workshop-portal .progress-example [role="progressbar"] {
+  height: 5px;
+  background: #e2e7db;
+  margin: 15px 0;
+  color: #437a4f;
+}
+.workshop .progress-example input,
+.motion-workshop-portal .progress-example input {
+  width: 100%;
+  accent-color: #437a4f;
+}
+.workshop .anticipation-badge,
+.motion-workshop-portal .anticipation-badge {
+  display: block;
+  background: #e9d7aa;
+  padding: 22px;
+  border-radius: 50%;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+.workshop .reward-badge,
+.motion-workshop-portal .reward-badge {
+  display: block;
+  font-size: 34px;
+  color: #9e732d;
+}
+.workshop .menu,
+.motion-workshop-portal .menu {
+  background: #fffef8;
+  border: 1px solid #ccd7c2;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 15px 55px #20382c22;
+  display: grid;
+  gap: 8px;
+}
+.workshop .spatial,
+.motion-workshop-portal .spatial {
+  grid-template-columns: 1fr;
+}
+.workshop .morph-card,
+.motion-workshop-portal .morph-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px;
+  text-align: start;
+  background: #e3e9da;
+  border-radius: 10px;
+}
+.workshop .morph-card strong,
+.motion-workshop-portal .morph-card strong {
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+.workshop .morph-card small,
+.motion-workshop-portal .morph-card small {
+  color: #738168;
+}
+.workshop .expanded-content,
+.motion-workshop-portal .expanded-content {
+  padding: 30px;
+}
+.workshop .expanded-content h2,
+.motion-workshop-portal .expanded-content h2 {
+  font-family: Georgia, serif;
+  font-size: 44px;
+  font-weight: 400;
+}
+.workshop .media-inline,
+.motion-workshop-portal .media-inline {
+  width: 100%;
+  height: 220px;
+  background: #d8e1cf;
+  border-radius: 10px;
+}
+.workshop .media-expanded,
+.motion-workshop-portal .media-expanded {
+  width: 100%;
+  height: 50vh;
+}
+.workshop .diagnostics,
+.motion-workshop-portal .diagnostics {
+  margin-top: 24px;
+  background: #e8ecdf;
+  padding: 20px;
+  border-radius: 12px;
+  font-family: monospace;
+  font-size: 11px;
+}
+.workshop .diagnostics h2,
+.motion-workshop-portal .diagnostics h2 {
+  display: inline-block;
+  margin-right: 15px;
+}
+.workshop .diagnostics ol,
+.motion-workshop-portal .diagnostics ol {
+  line-height: 1.8;
+  min-height: 30px;
+}
+.workshop .diagnostics small,
+.motion-workshop-portal .diagnostics small {
+  color: #758174;
+}
+.workshop .recipe-card,
+.motion-workshop-portal .recipe-card {
+  width: 100%;
+}
+.workshop footer,
+.motion-workshop-portal footer {
+  border-top: 1px solid #cbd4c8;
+  padding-top: 24px;
+  margin-top: 50px;
+  font-size: 11px;
+  color: #758174;
+}
+@media (max-width: 1000px) {
+  .workshop {
+    padding: 24px;
+  }
+  .workshop .workspace,
+  .motion-workshop-portal .workspace {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .workshop .scenes,
+  .motion-workshop-portal .scenes {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .workshop header > span {
+    display: none;
+  }
+  .workshop .brand i,
+  .motion-workshop-portal .brand i {
+    font-size: 8px;
+  }
+  .workshop .intro,
+  .motion-workshop-portal .intro {
+    display: block;
+    margin: 40px 0;
+  }
+  .workshop .intro > p,
+  .motion-workshop-portal .intro > p {
+    margin-top: 30px;
+  }
+  .workshop .workspace,
+  .motion-workshop-portal .workspace {
+    display: block;
+  }
+  .workshop aside,
+  .motion-workshop-portal aside {
+    position: static;
+    margin-bottom: 28px;
+  }
+  .workshop aside > label:not(.check),
+  .motion-workshop-portal aside > label:not(.check) {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    padding-inline-end: 10px;
+  }
+  .workshop aside .check,
+  .motion-workshop-portal aside .check {
+    display: inline-flex !important;
+    margin-inline-end: 15px;
+  }
+  .workshop nav,
+  .motion-workshop-portal nav {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background: #f4f2e9;
+    padding: 10px 0;
+  }
+  .workshop .scene,
+  .motion-workshop-portal .scene {
+    padding: 18px;
+  }
+  .workshop .expanded-content,
+  .motion-workshop-portal .expanded-content {
+    padding: 20px;
+  }
+  .workshop .expanded-content h2,
+  .motion-workshop-portal .expanded-content h2 {
+    font-size: 32px;
+  }
+}
+
+/* Original card specimens; scoped so the example can also run in SplitIn. */
+.card-studies { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; }
+.card-study-trigger { position: relative; overflow: hidden; min-height: 44px; padding: 12px 20px; border: 1px solid currentColor; border-radius: 16px; }
+.card-study-trigger--pill { border-radius: 22px; }
+.card-study-trigger--listing { width: 180px; aspect-ratio: 9 / 16; color: white; background: #183c2e; }
+.card-study-trigger--listing img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card-study-trigger--listing strong { position: relative; padding: 8px; background: rgb(0 0 0 / 65%); }
+.card-study-content { padding: 16px; }
+.card-study-viewport { width: 100%; overflow: hidden; }
+.card-study-track { display: flex; width: 100%; }
+.card-study-slide { flex: 0 0 100%; min-width: 0; }
+.card-study-media { height: min(55dvh, 400px); overflow: hidden; }
+.card-study-media img { width: 100%; height: 100%; object-fit: cover; }
+.card-study-controls { display: flex; flex-wrap: wrap; gap: 12px; }
+.card-study-controls button { min-height: 44px; }

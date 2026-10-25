@@ -1,0 +1,12 @@
+appId: com.splitin.motionlab
+---
+- launchApp
+- scrollUntilVisible:
+    element: Expand persistent listing
+    direction: DOWN
+- repeat:
+    times: 10
+    commands:
+      - tapOn: Expand persistent listing
+      - tapOn: Close expanded surface
+- assertVisible: Expand persistent listing

@@ -1,0 +1,12 @@
+appId: com.splitin.motionlab
+---
+- launchApp
+- scrollUntilVisible:
+    element: "Long press a tile, then drag; scroll near an edge."
+    direction: DOWN
+- longPressOn: One
+- swipe:
+    start: 25%, 65%
+    end: 70%, 80%
+    duration: 1000
+- assertVisible: Motion Lab

@@ -1,0 +1,82 @@
+
+> @splitin/react-mobile-interactions@1.0.0-beta.1 build
+> tsup && tsc -p tsconfig.build.json && node scripts/finalize-declarations.mjs
+
+CLI Building entry: {"index":"src/index.ts","core/index":"src/core/index.ts","web/index":"src/web/index.ts","core/legacy-swipe":"src/core/legacy-swipe.ts","web/swipe-intent":"src/web/swipe-intent.ts","web/compat":"src/web/compat.tsx","web/css-motion":"src/web/css-motion.ts","native/index":"src/native/index.ts","presets/index":"src/presets/index.ts","presets/generic":"src/presets/generic.ts","presets/entrances":"src/presets/entrances.ts","presets/text":"src/presets/text.ts","presets/apple":"src/presets/apple.ts","extensions/index":"src/extensions/index.ts","integrations/react-router":"src/integrations/react-router.tsx","integrations/react-navigation":"src/integrations/react-navigation.tsx","integrations/expo-haptics":"src/integrations/expo-haptics.ts"}
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.1
+CLI Using tsup config: /Users/omkarchavan/Desktop/Job Hunt/COVER LETTERS/SplitIn/RIP/splitin/motion-recovery.local/package/react-mobile-interactions/tsup.config.ts
+CLI Target: es2022
+CLI Cleaning output folder
+ESM Build start
+CJS Build start
+CJS dist/core/index.cjs                        11.41 KB
+CJS dist/core/legacy-swipe.cjs                 3.12 KB
+CJS dist/web/swipe-intent.cjs                  13.54 KB
+CJS dist/web/index.cjs                         85.00 KB
+CJS dist/web/css-motion.cjs                    4.10 KB
+CJS dist/presets/index.cjs                     1.29 KB
+CJS dist/web/compat.cjs                        11.62 KB
+CJS dist/presets/generic.cjs                   7.06 KB
+CJS dist/presets/text.cjs                      2.17 KB
+CJS dist/extensions/index.cjs                  3.62 KB
+CJS dist/native/index.cjs                      69.98 KB
+CJS dist/integrations/react-router.cjs         4.62 KB
+CJS dist/presets/entrances.cjs                 5.21 KB
+CJS dist/presets/apple.cjs                     38.40 KB
+CJS dist/index.cjs                             21.92 KB
+CJS dist/integrations/react-navigation.cjs     4.01 KB
+CJS dist/integrations/expo-haptics.cjs         2.39 KB
+CJS dist/web/swipe-intent.cjs.map              40.68 KB
+CJS dist/core/index.cjs.map                    20.12 KB
+CJS dist/core/legacy-swipe.cjs.map             4.15 KB
+CJS dist/web/index.cjs.map                     148.29 KB
+CJS dist/presets/index.cjs.map                 13.42 KB
+CJS dist/web/compat.cjs.map                    34.85 KB
+CJS dist/web/css-motion.cjs.map                5.96 KB
+CJS dist/integrations/react-router.cjs.map     19.33 KB
+CJS dist/presets/text.cjs.map                  2.42 KB
+CJS dist/extensions/index.cjs.map              16.44 KB
+CJS dist/presets/entrances.cjs.map             7.45 KB
+CJS dist/presets/apple.cjs.map                 58.38 KB
+CJS dist/presets/generic.cjs.map               12.18 KB
+CJS dist/integrations/react-navigation.cjs.map 21.82 KB
+CJS dist/native/index.cjs.map                  119.01 KB
+CJS dist/index.cjs.map                         38.59 KB
+CJS dist/integrations/expo-haptics.cjs.map     1.33 KB
+CJS ⚡️ Build success in 46ms
+ESM dist/web/swipe-intent.js                  12.24 KB
+ESM dist/core/index.js                        9.30 KB
+ESM dist/index.js                             18.81 KB
+ESM dist/web/index.js                         77.46 KB
+ESM dist/web/compat.js                        9.60 KB
+ESM dist/presets/index.js                     271.00 B
+ESM dist/core/legacy-swipe.js                 1.93 KB
+ESM dist/native/index.js                      59.70 KB
+ESM dist/presets/entrances.js                 3.67 KB
+ESM dist/presets/generic.js                   5.47 KB
+ESM dist/web/css-motion.js                    3.09 KB
+ESM dist/extensions/index.js                  2.57 KB
+ESM dist/presets/apple.js                     33.16 KB
+ESM dist/presets/text.js                      1.14 KB
+ESM dist/integrations/react-router.js         2.93 KB
+ESM dist/integrations/react-navigation.js     2.51 KB
+ESM dist/integrations/expo-haptics.js         810.00 B
+ESM dist/web/swipe-intent.js.map              40.79 KB
+ESM dist/core/index.js.map                    19.80 KB
+ESM dist/index.js.map                         37.94 KB
+ESM dist/web/compat.js.map                    34.81 KB
+ESM dist/core/legacy-swipe.js.map             4.10 KB
+ESM dist/presets/entrances.js.map             7.33 KB
+ESM dist/presets/generic.js.map               12.04 KB
+ESM dist/web/index.js.map                     149.96 KB
+ESM dist/web/css-motion.js.map                5.91 KB
+ESM dist/presets/text.js.map                  2.37 KB
+ESM dist/extensions/index.js.map              16.40 KB
+ESM dist/presets/index.js.map                 13.23 KB
+ESM dist/presets/apple.js.map                 57.92 KB
+ESM dist/integrations/react-router.js.map     19.53 KB
+ESM dist/integrations/react-navigation.js.map 22.09 KB
+ESM dist/integrations/expo-haptics.js.map     1.28 KB
+ESM dist/native/index.js.map                  121.86 KB
+ESM ⚡️ Build success in 47ms

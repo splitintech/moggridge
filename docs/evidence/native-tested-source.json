@@ -1,0 +1,61 @@
+{
+  "comparison": "All native adapter, portable core, portable preset entrypoint and native-integration runtime inputs are byte-identical to the successful packed native Metro check. Legacy web-only preset files subsequently received whitespace normalization; native imports do not reach them.",
+  "files": [
+    {
+      "file": "src/native/policy.tsx",
+      "sha256": "3d01bdd6df4afc1e7d0d35f9e2df4f536ce3f8c732e12ea1676d6891db8ab82d"
+    },
+    {
+      "file": "src/native/hosts.tsx",
+      "sha256": "c029e8c481ceff7b2d2a78b91acfa9baaff71d04d51c02830fcfdce9a44e0a8d"
+    },
+    {
+      "file": "src/native/catalog.tsx",
+      "sha256": "7e499f06a2e08ce6cecc74a7f9bf8e63705072eec7b7c68096a1d3432e152314"
+    },
+    {
+      "file": "src/native/ownership.tsx",
+      "sha256": "17212c2ec387cb008ef0d1c3e3bd4d3ab8fe8a5fd0275df725bf6d645a923152"
+    },
+    {
+      "file": "src/native/reorder.tsx",
+      "sha256": "d1a9a44b146b5f2110c22ef49aabd8040c787807b483caec7e03688865b82b43"
+    },
+    {
+      "file": "src/native/presets.tsx",
+      "sha256": "6ea162cd8bd2d59fbeebe2100e07a9a3a764f13fefe56e659bbbe2c0710b6d00"
+    },
+    {
+      "file": "src/native/index.ts",
+      "sha256": "4378fa63a8bd0968925e12bfe7ec9d99d1be2c5b5b8892359491dd0e0b2b3e71"
+    },
+    {
+      "file": "src/native/momentum.tsx",
+      "sha256": "834732c9b74867cb1a2843c44e4983d70fdca905968f3ff925ab6881e27d7921"
+    },
+    {
+      "file": "src/native/gestures.tsx",
+      "sha256": "90c0e720383833c66d5b493dfa2a7d07f6409adeac30e60a1d56b0c403f0706a"
+    },
+    {
+      "file": "src/core/index.ts",
+      "sha256": "4f9f834bdd5ba5e9798b5a66dbb09f56dfa5622288d0a6f0b477fd1e8c3a1489"
+    },
+    {
+      "file": "src/core/motion.ts",
+      "sha256": "bbd98a0308713dc2d52df12e4063065bb719f6218838423119e6bc3038ff59a7"
+    },
+    {
+      "file": "src/presets/index.ts",
+      "sha256": "7acef8435c8fb58f80712aeaebb714d86ea3050fbd21f1d31fb86783588cbac4"
+    },
+    {
+      "file": "src/integrations/react-navigation.tsx",
+      "sha256": "2cbfb1f1440e1b838b14f44a243c869e6e63cde58636d93b983648a904c5c394"
+    },
+    {
+      "file": "src/integrations/expo-haptics.ts",
+      "sha256": "7e7ff8cd66ecf3db6bef9ddc96fc826f460e30d1bd4820b5e6b6b964ba0f3d36"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+
+> @splitin/react-mobile-interactions@1.0.0-beta.1 check:consumers
+> node scripts/check-web-consumers.mjs
+
+React 18.3.1: packed web/root/core imports, SSR, TypeScript, Vite and no native engines passed
+React 19.3.0: packed web/root/core imports, SSR, TypeScript, Vite and no native engines passed

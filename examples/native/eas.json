@@ -1,0 +1,1 @@
+{"build":{"development":{"developmentClient":true,"distribution":"internal"},"qualification":{"distribution":"internal","android":{"buildType":"apk"},"ios":{"simulator":false}}}}

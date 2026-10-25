@@ -1,0 +1,32 @@
+
+> @splitin/react-mobile-interactions@1.0.0-beta.1 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/omkarchavan/Desktop/Job Hunt/COVER LETTERS/SplitIn/RIP/splitin/motion-recovery.local/package/react-mobile-interactions
+
+ ✓ tests/MobileRouteTransition.test.tsx (3 tests) 30ms
+ ✓ tests/web/policy-controls.test.tsx (4 tests) 136ms
+ ✓ tests/web/compat.test.tsx (7 tests) 230ms
+ ✓ tests/web/router.test.tsx (2 tests) 191ms
+ ✓ tests/web/contracts.test.tsx (8 tests) 447ms
+ ✓ tests/web/completion.test.tsx (6 tests) 506ms
+   ✓ retains keyed removal through the exit rather than discarding content immediately  322ms
+ ✓ tests/web/css-motion.test.ts (4 tests) 26ms
+ ✓ tests/useSwipeableTabs.test.tsx (3 tests) 63ms
+ ✓ tests/web/swipe-intent.test.tsx (4 tests) 149ms
+ ✓ tests/MobileEdgeBackHandler.test.tsx (4 tests) 52ms
+ ✓ tests/web/tilt.test.tsx (4 tests) 18ms
+ ✓ tests/useSwipeIntent.test.tsx (5 tests) 87ms
+ ✓ tests/mobileBackStore.test.tsx (3 tests) 11ms
+ ✓ tests/gestures.test.ts (8 tests) 10ms
+ ✓ tests/core-motion.test.ts (11 tests) 5ms
+ ✓ tests/apple-presets.test.ts (2 tests) 4ms
+ ✓ tests/web/critical.test.tsx (4 tests) 13972ms
+   ✓ retargets same-ID content and destination and different-ID geometry from the current frame  433ms
+   ✓ retains popover during exit and supports controlled reversal  13212ms
+
+ Test Files  17 passed (17)
+      Tests  82 passed (82)
+   Start at  08:06:10
+   Duration  15.95s (transform 774ms, setup 0ms, collect 6.69s, tests 15.94s, environment 9.68s, prepare 2.32s)

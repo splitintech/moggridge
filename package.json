@@ -1,7 +1,7 @@
 {
   "name": "@splitin/react-mobile-interactions",
-  "version": "0.2.0",
-  "description": "Reusable React primitives for mobile gestures, native motion, route transitions, and overlay back handling.",
+  "version": "1.0.0-beta.1",
+  "description": "Moggridge: cross-platform motion, gestures, reversible surfaces and media continuity for React and React Native.",
   "keywords": [
     "react",
     "mobile",
@@ -28,14 +28,13 @@
   ],
   "author": "SplitInTech, @ojchavan",
   "license": "MIT",
-  "homepage": "https://github.com/splitintech/open-internal-tools/tree/main/react-mobile-interactions#readme",
+  "homepage": "https://github.com/splitintech/moggridge#readme",
   "bugs": {
-    "url": "https://github.com/splitintech/open-internal-tools/issues"
+    "url": "https://github.com/splitintech/moggridge/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/splitintech/open-internal-tools.git",
-    "directory": "react-mobile-interactions"
+    "url": "git+https://github.com/splitintech/moggridge.git"
   },
   "type": "module",
   "sideEffects": false,
@@ -47,26 +46,131 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js",
+      "require": "./dist/core/index.cjs"
+    },
+    "./web": {
+      "types": "./dist/web/index.d.ts",
+      "import": "./dist/web/index.js",
+      "require": "./dist/web/index.cjs"
+    },
+    "./native": {
+      "types": "./dist/native/index.d.ts",
+      "react-native": "./src/native/index.ts",
+      "import": "./dist/native/index.js",
+      "require": "./dist/native/index.cjs"
+    },
+    "./presets": {
+      "types": "./dist/presets/index.d.ts",
+      "import": "./dist/presets/index.js",
+      "require": "./dist/presets/index.cjs"
+    },
+    "./presets/apple": {
+      "types": "./dist/presets/apple.d.ts",
+      "import": "./dist/presets/apple.js",
+      "require": "./dist/presets/apple.cjs"
+    },
+    "./extensions": {
+      "types": "./dist/extensions/index.d.ts",
+      "import": "./dist/extensions/index.js",
+      "require": "./dist/extensions/index.cjs"
+    },
+    "./integrations/react-router": {
+      "types": "./dist/integrations/react-router.d.ts",
+      "import": "./dist/integrations/react-router.js",
+      "require": "./dist/integrations/react-router.cjs"
+    },
+    "./integrations/react-navigation": {
+      "types": "./dist/integrations/react-navigation.d.ts",
+      "import": "./dist/integrations/react-navigation.js",
+      "require": "./dist/integrations/react-navigation.cjs"
+    },
+    "./integrations/expo-haptics": {
+      "types": "./dist/integrations/expo-haptics.d.ts",
+      "import": "./dist/integrations/expo-haptics.js",
+      "require": "./dist/integrations/expo-haptics.cjs"
+    },
+    "./package.json": "./package.json",
+    "./presets/generic": {
+      "types": "./dist/presets/generic.d.ts",
+      "import": "./dist/presets/generic.js",
+      "require": "./dist/presets/generic.cjs"
+    },
+    "./presets/entrances": {
+      "types": "./dist/presets/entrances.d.ts",
+      "import": "./dist/presets/entrances.js",
+      "require": "./dist/presets/entrances.cjs"
+    },
+    "./presets/text": {
+      "types": "./dist/presets/text.d.ts",
+      "import": "./dist/presets/text.js",
+      "require": "./dist/presets/text.cjs"
+    },
+    "./web/compat": {
+      "types": "./dist/web/compat.d.ts",
+      "import": "./dist/web/compat.js",
+      "require": "./dist/web/compat.cjs"
+    },
+    "./web/css-motion": {
+      "types": "./dist/web/css-motion.d.ts",
+      "import": "./dist/web/css-motion.js",
+      "require": "./dist/web/css-motion.cjs"
+    },
+    "./core/legacy-swipe": {
+      "types": "./dist/core/legacy-swipe.d.ts",
+      "import": "./dist/core/legacy-swipe.js",
+      "require": "./dist/core/legacy-swipe.cjs"
+    },
+    "./web/swipe-intent": {
+      "types": "./dist/web/swipe-intent.d.ts",
+      "import": "./dist/web/swipe-intent.js",
+      "require": "./dist/web/swipe-intent.cjs"
     }
   },
   "files": [
     "dist",
+    "src/native",
+    "src/core",
+    "src/presets",
+    "src/integrations",
     "LICENSE",
     "README.md",
-    "package.json"
+    "docs"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && tsc -p tsconfig.build.json && node scripts/finalize-declarations.mjs",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "check:package": "node scripts/check-package.mjs",
+    "test:core": "vitest run tests/core-motion.test.ts",
+    "dev:lab": "vite --config examples/web/vite.config.ts",
+    "build:lab": "vite build --config examples/web/vite.config.ts",
+    "test:browser": "playwright test",
+    "check:release": "node scripts/check-release.mjs",
+    "check:consumers": "node scripts/check-web-consumers.mjs",
+    "check:migration": "node scripts/check-migration.mjs",
+    "test:release-tools": "node --test tests/release-tools.test.mjs"
   },
   "peerDependencies": {
     "framer-motion": "^12.0.0",
     "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "@radix-ui/react-dialog": "^1.1.0",
+    "@radix-ui/react-popover": "^1.1.0",
+    "react-router-dom": "^6.26.0 || ^7.0.0",
+    "react-native": "^0.88.0",
+    "react-native-reanimated": "~4.7.1",
+    "react-native-worklets": "~0.13.0",
+    "react-native-gesture-handler": "~3.3.0",
+    "@react-navigation/native": "^7.0.0",
+    "expo-haptics": ">=15 <59"
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.0",
@@ -78,6 +182,57 @@
     "react-dom": "^18.3.1",
     "tsup": "^8.5.0",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-popover": "^1.1.15",
+    "react-router-dom": "^6.30.1",
+    "vite": "^6.1.0",
+    "@playwright/test": "^1.56.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@testing-library/dom": "^10.4.1",
+    "react-native": "0.88.0",
+    "react-native-reanimated": "4.7.1",
+    "react-native-worklets": "0.13.0",
+    "react-native-gesture-handler": "~3.3.0",
+    "@react-navigation/native": "^7.0.0",
+    "expo-haptics": "~58.0.7"
+  },
+  "peerDependenciesMeta": {
+    "framer-motion": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "@radix-ui/react-dialog": {
+      "optional": true
+    },
+    "@radix-ui/react-popover": {
+      "optional": true
+    },
+    "react-router-dom": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    },
+    "react-native-reanimated": {
+      "optional": true
+    },
+    "react-native-worklets": {
+      "optional": true
+    },
+    "react-native-gesture-handler": {
+      "optional": true
+    },
+    "@react-navigation/native": {
+      "optional": true
+    },
+    "expo-haptics": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

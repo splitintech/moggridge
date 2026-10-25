@@ -1,0 +1,43 @@
+
+> @splitin/react-mobile-interactions@1.0.0-beta.1 test:browser
+> playwright test
+
+[WebServer] (node:76802) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+[WebServer] Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+[WebServer]   npx update-browserslist-db@latest
+[WebServer]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[WebServer]
+[WebServer] warn - The `content` option in your Tailwind CSS configuration is missing or empty.
+[WebServer] warn - Configure your content sources or your generated CSS will be missing styles.
+[WebServer] warn - https://tailwindcss.com/docs/content-configuration
+(node:76810) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser/workshop.spec.ts:2:1 › all thirteen patterns render and keyboard alternatives change host state (3.9s)
+  ✓   2 [chromium] › tests/browser/workshop.spec.ts:67:1 › sheet and anchored popover close with Escape and restore focus (2.6s)
+  ✓   3 [chromium] › tests/browser/workshop.spec.ts:86:1 › morph reverses, lands, and returns focus under live reduced motion (1.7s)
+  ✓   4 [chromium] › tests/browser/workshop.spec.ts:107:1 › video keeps player,parent,source and time through route and return (1.7s)
+  ✓   5 [chromium] › tests/browser/workshop.spec.ts:170:1 › lab desktop and mobile visual artifacts (654ms)
+  ✓   6 [chromium] › tests/browser/workshop.spec.ts:188:1 › 100 reduced-motion morph cycles release global listeners and overlays (12.8s)
+(node:76929) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [firefox] › tests/browser/workshop.spec.ts:2:1 › all thirteen patterns render and keyboard alternatives change host state (11.8s)
+  ✓   8 [firefox] › tests/browser/workshop.spec.ts:67:1 › sheet and anchored popover close with Escape and restore focus (2.8s)
+  ✓   9 [firefox] › tests/browser/workshop.spec.ts:86:1 › morph reverses, lands, and returns focus under live reduced motion (2.0s)
+  ✓  10 [firefox] › tests/browser/workshop.spec.ts:107:1 › video keeps player,parent,source and time through route and return (1.7s)
+  -  11 [firefox] › tests/browser/workshop.spec.ts:170:1 › lab desktop and mobile visual artifacts
+  ✓  12 [firefox] › tests/browser/workshop.spec.ts:188:1 › 100 reduced-motion morph cycles release global listeners and overlays (15.1s)
+(node:77094) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [webkit] › tests/browser/workshop.spec.ts:2:1 › all thirteen patterns render and keyboard alternatives change host state (4.8s)
+  ✓  14 [webkit] › tests/browser/workshop.spec.ts:67:1 › sheet and anchored popover close with Escape and restore focus (2.2s)
+  ✓  15 [webkit] › tests/browser/workshop.spec.ts:86:1 › morph reverses, lands, and returns focus under live reduced motion (1.9s)
+  ✓  16 [webkit] › tests/browser/workshop.spec.ts:107:1 › video keeps player,parent,source and time through route and return (1.9s)
+  -  17 [webkit] › tests/browser/workshop.spec.ts:170:1 › lab desktop and mobile visual artifacts
+  ✓  18 [webkit] › tests/browser/workshop.spec.ts:188:1 › 100 reduced-motion morph cycles release global listeners and overlays (12.5s)
+
+  2 skipped
+  16 passed (1.6m)

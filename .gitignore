@@ -3,3 +3,15 @@ node_modules
 *.log
 coverage
 dist
+
+examples/web/build
+test-results
+playwright-report
+examples/native/.expo
+examples/native/ios
+examples/native/android
+examples/native/export
+examples/bare-native/ios/Pods
+examples/bare-native/android/.gradle
+
+*.tgz

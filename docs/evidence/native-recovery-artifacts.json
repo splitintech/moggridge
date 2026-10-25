@@ -1,0 +1,30 @@
+{
+  "nativeSourceMatchesPacked": true,
+  "artifacts": [
+    {
+      "path": "/private/tmp/motion-recovered-expo-export/metadata.json",
+      "bytes": 368,
+      "sha256": "d26c0e627ac93ee023eb142786dc49a52fd5685bc1de9d956d30c0e56a41a91b"
+    },
+    {
+      "path": "/private/tmp/motion-recovered-expo-export/_expo/static/js/ios/index-15e5d1cd2a5218b0ca11bbd19c36cd36.hbc",
+      "bytes": 3254131,
+      "sha256": "c70bfffa032bf19a42d84670b057b3c218f47378f553b5d9b6fed65fe5363807"
+    },
+    {
+      "path": "/private/tmp/motion-recovered-expo-export/_expo/static/js/android/index-1b2004638d8bc68c4afb26321e7dfd1c.hbc",
+      "bytes": 3260510,
+      "sha256": "2d5330ab8b527583a1dbd5ecac2764aeb0cd15b768b59ec8cf049caceacf804f"
+    },
+    {
+      "path": "/private/tmp/motion-recovered-expo-export/assets/fdfc80a719f679c80b62592924c1621b",
+      "bytes": 32070,
+      "sha256": "714a20d2a504d7cc41e43bb038bd767855bfe7bea445b6e78d4b0293dfdb6012"
+    },
+    {
+      "path": "/private/tmp/motion-recovered-bare.android.js",
+      "bytes": 1931029,
+      "sha256": "349bc4227e96d1eef23c9b1b344ec683d9d7b9faa1972fa9a5dff4f8baaae135"
+    }
+  ]
+}

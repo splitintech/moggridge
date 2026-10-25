@@ -1,0 +1,27 @@
+{
+  "name": "MotionBareFixture",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "react-native start",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output /tmp/motion-bare.android.js",
+    "android:release": "react-native build-android --mode release",
+    "ios:release": "react-native build-ios --mode Release"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-reanimated": "4.7.1",
+    "react-native-worklets": "0.13.0",
+    "react-native-gesture-handler": "~3.3.0"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "20.2.0",
+    "@react-native/babel-preset": "0.88.0",
+    "@react-native/metro-config": "0.88.0",
+    "@react-native-community/cli-platform-ios": "20.2.0",
+    "@react-native-community/cli-platform-android": "20.2.0"
+  }
+}

@@ -1,0 +1,101 @@
+name: Motion native qualification
+on:
+  pull_request:
+    paths:
+      - "package*.json"
+      - "tsup.config.ts"
+      - "src/native/**"
+      - "src/core/**"
+      - "examples/native/**"
+      - "examples/bare-native/**"
+      - "tests/native/**"
+      - ".github/workflows/react-mobile-interactions-native.yml"
+  workflow_dispatch:
+jobs:
+  contracts-and-metro:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: examples/native/package-lock.json
+      - run: npm ci --legacy-peer-deps --ignore-scripts
+      - run: npm run build
+      - run: |
+          mkdir -p /tmp/motion-packed
+          npm pack --pack-destination /tmp/motion-packed
+          tar -xzf /tmp/motion-packed/*.tgz -C /tmp/motion-packed
+      - run: npm ci --prefix examples/native
+      - run: node examples/native/node_modules/typescript/bin/tsc -p examples/native/tsconfig.check.json
+      - run: node examples/native/node_modules/jest/bin/jest.js --config tests/native/jest.config.cjs --runInBand
+      - run: cd examples/native && MOTION_PACKAGE_PATH=/tmp/motion-packed/package EXPO_NO_TELEMETRY=1 npx expo export --platform ios --platform android --output-dir /tmp/native-export
+      - run: npm ci --prefix examples/bare-native
+      - run: cd examples/bare-native && MOTION_PACKAGE_PATH=/tmp/motion-packed/package npm run bundle
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-metro-export
+          path: /tmp/native-export
+  android-release:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/bare-native
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: android-actions/setup-android@v3
+      - name: Build and pack motion dependency
+        working-directory: .
+        run: |
+          npm ci --legacy-peer-deps --ignore-scripts
+          npm run build
+          mkdir -p "$RUNNER_TEMP/motion-packed"
+          npm pack --pack-destination "$RUNNER_TEMP/motion-packed"
+          tar -xzf "$RUNNER_TEMP"/motion-packed/*.tgz -C "$RUNNER_TEMP/motion-packed"
+          echo "MOTION_PACKAGE_PATH=$RUNNER_TEMP/motion-packed/package" >> "$GITHUB_ENV"
+      - run: npm ci
+      - run: cd android && ./gradlew assembleRelease --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bare-android-release-fixture
+          path: examples/bare-native/android/app/build/outputs/apk/release/*.apk
+  ios-release-simulator:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: examples/bare-native
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+          working-directory: examples/bare-native
+      - name: Build and pack motion dependency
+        working-directory: .
+        run: |
+          npm ci --legacy-peer-deps --ignore-scripts
+          npm run build
+          mkdir -p "$RUNNER_TEMP/motion-packed"
+          npm pack --pack-destination "$RUNNER_TEMP/motion-packed"
+          tar -xzf "$RUNNER_TEMP"/motion-packed/*.tgz -C "$RUNNER_TEMP/motion-packed"
+          echo "MOTION_PACKAGE_PATH=$RUNNER_TEMP/motion-packed/package" >> "$GITHUB_ENV"
+      - run: npm ci
+      - run: cd ios && bundle exec pod install
+      - run: xcodebuild -workspace ios/MotionBareFixture.xcworkspace -scheme MotionBareFixture -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build

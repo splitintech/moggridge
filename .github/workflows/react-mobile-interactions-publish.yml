@@ -2,6 +2,11 @@ name: react-mobile-interactions-publish
 
 on:
   workflow_dispatch:
+    inputs:
+      qualification_run_id:
+        description: "Run containing motion-release-qualification artifact (required for stable)"
+        required: false
+        type: string
   push:
     tags:
       - "react-mobile-interactions-v*"
@@ -11,7 +16,7 @@ permissions:
 
 defaults:
   run:
-    working-directory: react-mobile-interactions
+    working-directory: .
 
 jobs:
   publish:
@@ -20,21 +25,35 @@ jobs:
     permissions:
       id-token: write
       contents: write
+      actions: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: react-mobile-interactions/package-lock.json
+          cache-dependency-path: package-lock.json
       - name: Install npm for OIDC trusted publishing
         run: npm install -g npm@11.5.1
         working-directory: .
       - run: npm --version
         working-directory: .
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
+      - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      - run: npm run check:package
+      - name: Load external qualification evidence
+        env:
+          GH_TOKEN: ${{ github.token }}
+          QUALIFICATION_RUN: ${{ inputs.qualification_run_id || vars.MOTION_QUALIFICATION_RUN_ID }}
+        run: |
+          if [[ -n "$QUALIFICATION_RUN" ]]; then
+            [[ "$QUALIFICATION_RUN" =~ ^[0-9]+$ ]] || exit 1
+            gh run download "$QUALIFICATION_RUN" --repo "${{ github.repository }}" --name motion-release-qualification --dir "$RUNNER_TEMP/motion-qualification"
+            echo "MOTION_QUALIFICATION_FILE=$RUNNER_TEMP/motion-qualification/qualification.json" >> "$GITHUB_ENV"
+          fi
+      - run: npm run check:release
       - name: Assert release tag matches package version
         if: github.ref_type == 'tag'
         working-directory: .
@@ -42,10 +61,10 @@ jobs:
           node scripts/assert-release-tag.mjs \
             --tag "${{ github.ref_name }}" \
             --prefix react-mobile-interactions-v \
-            --package react-mobile-interactions/package.json
+            --package package.json
       - name: Publish with OIDC provenance
         working-directory: .
-        run: node scripts/oidc-npm-publish.mjs --cwd react-mobile-interactions
+        run: node scripts/oidc-npm-publish.mjs --cwd .
       - name: Create GitHub Release
         if: github.ref_type == 'tag'
         env:
@@ -55,7 +74,10 @@ jobs:
           if gh release view "${{ github.ref_name }}" >/dev/null 2>&1; then
             echo "Release ${{ github.ref_name }} already exists."
           else
+            prerelease=()
+            if [[ "${{ github.ref_name }}" == *-*.*-* ]]; then prerelease=(--prerelease); fi
             gh release create "${{ github.ref_name }}" \
+              "${prerelease[@]}" \
               --verify-tag \
               --generate-notes \
               --title "react-mobile-interactions ${{ github.ref_name }}"

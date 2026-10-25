@@ -1,0 +1,60 @@
+{
+  "buildSHA": null,
+  "gates": {
+    "core": {
+      "status": "passed",
+      "artifacts": [
+        "docs/evidence/motion-compat-tests.txt"
+      ]
+    },
+    "compatibility": {
+      "status": "passed",
+      "artifacts": [
+        "docs/compatibility.md",
+        "docs/evidence/motion-compat-tests.txt",
+        "docs/evidence/motion-final-consumers.txt"
+      ]
+    },
+    "package": {
+      "status": "passed",
+      "artifacts": [
+        "docs/evidence/motion-final-package-check.txt",
+        "docs/evidence/motion-final-consumers.txt",
+        "docs/evidence/native-recovery-artifacts.json",
+        "docs/evidence/native-tested-source.json"
+      ]
+    },
+    "web": {
+      "status": "passed",
+      "artifacts": [
+        "docs/evidence/motion-final-browser.txt"
+      ]
+    },
+    "nativeAutomated": {
+      "status": "passed",
+      "artifacts": [
+        "docs/evidence/native-recovery-validation.md",
+        "docs/evidence/native-recovery-artifacts.json",
+        "docs/evidence/native-tested-source.json"
+      ]
+    },
+    "splitinRollout": {
+      "status": "pending",
+      "artifacts": [],
+      "reason": "Source migration and focused tests do not qualify authenticated route/role pilots."
+    },
+    "physicalIOS": {
+      "status": "unavailable",
+      "artifacts": []
+    },
+    "physicalAndroid": {
+      "status": "unavailable",
+      "artifacts": []
+    },
+    "installedPWA": {
+      "status": "unavailable",
+      "artifacts": []
+    }
+  },
+  "sourceDigest": "67455c1d38d02002ab6056d11a04d234b3b3ae3cc2ca7614e35afd950508e218"
+}

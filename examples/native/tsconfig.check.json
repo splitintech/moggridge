@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "react": [
+        "node_modules/@types/react"
+      ],
+      "react/jsx-runtime": [
+        "node_modules/@types/react/jsx-runtime"
+      ],
+      "react-native": [
+        "node_modules/react-native/types_generated/index.d.ts"
+      ],
+      "react-native-reanimated": [
+        "node_modules/react-native-reanimated"
+      ],
+      "react-native-gesture-handler": [
+        "node_modules/react-native-gesture-handler"
+      ],
+      "@react-navigation/native": [
+        "node_modules/@react-navigation/native"
+      ],
+      "expo-haptics": [
+        "node_modules/expo-haptics"
+      ],
+      "@splitin/react-mobile-interactions/native": [
+        "../../src/native/index.ts"
+      ],
+      "@splitin/react-mobile-interactions/core": [
+        "../../src/core/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "App.tsx",
+    "../../src/native/**/*",
+    "../../src/core/**/*",
+    "../../src/integrations/react-navigation.tsx",
+    "../../src/integrations/expo-haptics.ts"
+  ]
+}

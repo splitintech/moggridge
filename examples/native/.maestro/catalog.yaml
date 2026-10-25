@@ -1,0 +1,17 @@
+appId: com.splitin.motionlab
+---
+- launchApp
+- assertVisible: Motion Lab
+- tapOn:
+    id: press-compression
+- assertVisible: "Drag the handle; content scroll owns its own gestures."
+- scrollUntilVisible:
+    element: Close sheet
+    direction: DOWN
+- tapOn: Close sheet
+- tapOn: Reduce motion
+- scrollUntilVisible:
+    element: Move the same video surface
+    direction: DOWN
+- tapOn: Move the same video surface
+- tapOn: Move the same video surface

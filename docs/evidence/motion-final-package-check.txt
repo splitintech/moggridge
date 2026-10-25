@@ -1,0 +1,31 @@
+
+> @splitin/react-mobile-interactions@1.0.0-beta.1 check:package
+> node scripts/check-package.mjs
+
+{
+  "package": "@splitin/react-mobile-interactions",
+  "version": "1.0.0-beta.1",
+  "entrypoints": [
+    ".",
+    "./core",
+    "./web",
+    "./native",
+    "./presets",
+    "./presets/apple",
+    "./extensions",
+    "./integrations/react-router",
+    "./integrations/react-navigation",
+    "./integrations/expo-haptics",
+    "./package.json",
+    "./presets/generic",
+    "./presets/entrances",
+    "./presets/text",
+    "./web/compat",
+    "./web/css-motion",
+    "./core/legacy-swipe",
+    "./web/swipe-intent"
+  ],
+  "tarballBytes": 562761,
+  "integrity": "sha512-SafB40eCR7RU1GP+Q3mmEWcPAasUPd1AcE+GLRzG6d3i9+/3N/Kt7JrLB3f+4UxqLzPSNpgNvmtM22llret/Ag==",
+  "checks": "passed"
+}
