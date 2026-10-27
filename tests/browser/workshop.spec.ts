@@ -176,17 +176,17 @@ test("video keeps player,parent,source and time through route and return", async
 test("lab desktop and mobile visual artifacts", async ({
   page,
   browserName,
-}) => {
+}, testInfo) => {
   test.skip(browserName !== "chromium");
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.locator("article.scene")).toHaveCount(13);
   await page.screenshot({
-    path: "/private/tmp/motion-lab-desktop.png",
+    path: testInfo.outputPath("motion-lab-desktop.png"),
     fullPage: true,
   });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({
-    path: "/private/tmp/motion-lab-mobile.png",
+    path: testInfo.outputPath("motion-lab-mobile.png"),
     fullPage: true,
   });
 });

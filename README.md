@@ -223,6 +223,8 @@ npm run test:browser
 
 Packed-consumer checks cover React 18/19, ESM/CommonJS context sharing, SSR, TypeScript, Vite, and platform dependency isolation. Browser checks include the original card studies, reversal, focus, reduced motion, and media continuity. Native contracts and packed Metro checks run in the [native workflow](.github/workflows/react-mobile-interactions-native.yml); release compilation jobs are manually dispatched.
 
+The Chromium visual-artifact test saves desktop and mobile screenshots inside its test directory under `test-results/`. CI uploads that directory as `motion-browser-22` or `motion-browser-24`, including failure traces when present. These screenshots are review artifacts; they are not a visual-regression baseline.
+
 Historical validation is retained in [docs/evidence](docs/evidence). Evidence tied to an older source digest does not qualify this revision. A source build, simulator, or Metro bundle does not prove physical-device performance. Publishing is blocked unless the [release gates](docs/release.md) match the current source.
 
 ## Repository migration and SplitIn
@@ -230,6 +232,20 @@ Historical validation is retained in [docs/evidence](docs/evidence). Evidence ti
 This repository contains the reusable library and examples. SplitIn's application components, flags, business logic, and branded screens remain in the SplitIn repository. Its development gallery is synchronized from `examples/web`; its application consumes a packed or published dependency.
 
 Relevant history from the former folder was preserved with rewritten paths. The original banner is reused unchanged. See [migration provenance](docs/migration.md) for the source-file manifest, commit mapping, and standalone-repository changes.
+
+### Repository layout
+
+| Path | Contents |
+| --- | --- |
+| `src/` | Original runtime, shared core, web/native adapters, presets, and optional integrations. |
+| `examples/web/` | Browser motion lab, original card studies, and local media fixtures. |
+| `examples/native/`, `examples/bare-native/` | Expo and bare React Native integration fixtures. |
+| `tests/` | Unit, browser, native-contract, and release-tool checks. |
+| `scripts/` | Build, packed-consumer, migration, and release validation tools. |
+| `docs/` | Usage, compatibility, release gates, historical evidence, and migration provenance. |
+| `.github/workflows/` | Standalone package checks, native qualification, and gated npm publishing. |
+
+To verify the imported runtime, assets, and license against the recorded migration snapshot, run `npm run check:migration -- --snapshot`. This supplements the ordinary inventory/link check; it is expected to detect intentional runtime changes made after the migration.
 
 ## Contributing and releases
 
