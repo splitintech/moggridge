@@ -1,6 +1,6 @@
 # Release and rollback
 
-The working version is `1.0.0-beta.1`. It is an implementation candidate, not a statement that npm has this version. The observed public baseline was `0.1.0`. Publication occurs only after `check:release` passes.
+The working version is `1.0.0-beta.2`. It is an implementation candidate, not a statement that npm has this version. The observed public baseline was `0.1.0`. Publication occurs only after `check:release` passes.
 
 ## Qualification
 
@@ -13,7 +13,7 @@ The working version is `1.0.0-beta.1`. It is an implementation candidate, not a 
 
 ## Local SplitIn integration
 
-Before a qualified beta is published, SplitIn uses the exact versioned `vendor/splitin-react-mobile-interactions-1.0.0-beta.1.tgz` artifact. This is a packed dependency, not a second editable package source. Rebuild/repack from the canonical `splitintech/moggridge` checkout to refresh it. Replace the `file:` dependency with the exact registry version only after verifying the release.
+Before a qualified beta is published, SplitIn uses the exact versioned `vendor/splitin-react-mobile-interactions-1.0.0-beta.2.tgz` artifact. This is a packed dependency, not a second editable package source. Rebuild/repack from the canonical `splitintech/moggridge` checkout to refresh it. Replace the `file:` dependency with the exact registry version only after verifying the release.
 
 All motion flags default off. They are Vite environment flags and require a deployment to change; they are not remotely mutable runtime switches. Family flags require the master flag. Test both paths on actual consuming routes before rollout.
 

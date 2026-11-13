@@ -1,6 +1,6 @@
 {
   "name": "@splitin/react-mobile-interactions",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Moggridge: cross-platform motion, gestures, reversible surfaces and media continuity for React and React Native.",
   "keywords": [
     "react",
@@ -82,6 +82,11 @@
       "types": "./dist/integrations/react-router.d.ts",
       "import": "./dist/integrations/react-router.js",
       "require": "./dist/integrations/react-router.cjs"
+    },
+    "./integrations/react-router-screens": {
+      "types": "./dist/integrations/react-router-screens/index.d.ts",
+      "import": "./dist/integrations/react-router-screens.js",
+      "require": "./dist/integrations/react-router-screens.cjs"
     },
     "./integrations/react-navigation": {
       "types": "./dist/integrations/react-navigation.d.ts",
