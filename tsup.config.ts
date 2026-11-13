@@ -17,6 +17,7 @@ export default defineConfig({
     "presets/apple": "src/presets/apple.ts",
     "extensions/index": "src/extensions/index.ts",
     "integrations/react-router": "src/integrations/react-router.tsx",
+    "integrations/react-router-screens": "src/integrations/react-router-screens/index.ts",
     "integrations/react-navigation": "src/integrations/react-navigation.tsx",
     "integrations/expo-haptics": "src/integrations/expo-haptics.ts",
   },

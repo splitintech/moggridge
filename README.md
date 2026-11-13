@@ -15,7 +15,7 @@
 
 Moggridge is the standalone home of **`@splitin/react-mobile-interactions`**, originally developed in SplitIn's `open-internal-tools` repository. The npm name and existing root imports stay the same. This repository brings the original swipe/back/navigation primitives, the expanded cross-platform catalog, and the original card-motion studies together in one library.
 
-**Current status:** the source is a `1.0.0-beta.1` candidate. Moving it here does not publish that version to npm. Existing registry releases may expose only the earlier API. Use the packed-source installation below to try the new adapters. Browser and automated native checks are separate from physical-device, installed-PWA, and stable-release qualification; see [release status](docs/release.md).
+**Current status:** the source is a `1.0.0-beta.2` candidate (adds [screen transitions for React Router](docs/screen-transitions.md)). Moving it here does not publish that version to npm. Existing registry releases may expose only the earlier API. Use the packed-source installation below to try the new adapters. Browser and automated native checks are separate from physical-device, installed-PWA, and stable-release qualification; see [release status](docs/release.md).
 
 [Try the lab](#run-the-motion-lab) · [Web quick start](#web-quick-start) · [React Native](#react-native) · [API entrypoints](#api-entrypoints) · [Compatibility](docs/compatibility.md) · [Migration](docs/migration.md)
 
@@ -80,7 +80,7 @@ npm run build
 npm pack --ignore-scripts
 
 # In your React application; replace the path with your checkout location
-npm install /path/to/moggridge/splitin-react-mobile-interactions-1.0.0-beta.1.tgz \
+npm install /path/to/moggridge/splitin-react-mobile-interactions-1.0.0-beta.2.tgz \
   framer-motion@^12 @radix-ui/react-dialog @radix-ui/react-popover
 ```
 
@@ -180,6 +180,7 @@ See [Expo setup](examples/native/README.md) and [bare React Native setup](exampl
 | `/presets/apple` | Preserved Apple-style exports and reactive factory. |
 | `/presets/generic`, `/presets/entrances`, `/presets/text` | Separate namespaces for existing visual effects. |
 | `/integrations/react-router` | Persistent web navigation ownership. |
+| `/integrations/react-router-screens` | Phone screen-to-screen transitions: tabs, push/pop with edge swipe, slide-up tasks, card expand, space switches. See [screen transitions](docs/screen-transitions.md). |
 | `/integrations/react-navigation` | Native navigation integration. |
 | `/integrations/expo-haptics` | Optional semantic haptic driver. |
 | `/extensions` | Capability and lifecycle contract for future native effects. |
